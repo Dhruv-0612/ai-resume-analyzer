@@ -26,6 +26,10 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 def root():
     return {"message": "AI Resume Analyzer Backend Running"}
 
+    @app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
 
 def extract_text_from_pdf(pdf_bytes):
     pdf_stream = io.BytesIO(pdf_bytes)
