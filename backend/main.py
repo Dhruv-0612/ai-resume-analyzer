@@ -13,7 +13,10 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "https://your-frontend-url.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -26,7 +29,8 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 def root():
     return {"message": "AI Resume Analyzer Backend Running"}
 
- @app.get("/health")
+
+@app.get("/health")
 def health_check():
     return {"status": "ok"}
 
