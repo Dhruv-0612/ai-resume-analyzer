@@ -26,7 +26,7 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 def root():
     return {"message": "AI Resume Analyzer Backend Running"}
 
-    @app.get("/health")
+ @app.get("/health")
 def health_check():
     return {"status": "ok"}
 
