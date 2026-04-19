@@ -39,25 +39,25 @@ Built to simulate real-world resume evaluation using modern AI models and a clea
 
 ### 🏠 Home Page
 
-![Home Page](./ai-resume-analyzer/screenshots/home.png)
+![Home Page](./ai-resume-analyzer/ai-resume-analyzer/screenshots/home.png)
 
 ---
 
 ### ❌ Invalid File Handling
 
-![Invalid File](./ai-resume-analyzer/screenshots/invalid.png)
+![Invalid File](./ai-resume-analyzer/ai-resume-analyzer/screenshots/invalid.png)
 
 ---
 
 ### 📊 ATS Score Result
 
-![ATS Score](./ai-resume-analyzer/screenshots/ats.png)
+![ATS Score](./ai-resume-analyzer/ai-resume-analyzer/screenshots/ats.png)
 
 ---
 
 ### 📋 Full Analysis Output
 
-![Analysis](./ai-resume-analyzer/screenshots/analysis.png)
+![Analysis](./ai-resume-analyzer/ai-resume-analyzer/screenshots/analysis.png)
 
 ---
 
