@@ -1,3 +1,5 @@
+# 🚀 AI Resume Analyzer
+
 A full-stack AI-powered web application that analyzes resumes and provides ATS-style scoring, strengths, weaknesses, and actionable improvement suggestions.
 
 Built from scratch using modern AI APIs, clean architecture, and a premium UI to simulate real-world resume evaluation systems.
