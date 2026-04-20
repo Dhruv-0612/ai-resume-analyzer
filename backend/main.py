@@ -15,7 +15,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
-        "https://your-frontend-url.vercel.app",
+        "ai-resume-analyzer-459tuh5e0-dhruv-0612s-projects.vercel.app",
     ],
     allow_credentials=True,
     allow_methods=["*"],
