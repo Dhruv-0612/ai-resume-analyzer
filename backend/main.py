@@ -87,12 +87,19 @@ def clean_json_response(raw_text):
 
     cleaned = raw_text.strip()
 
-    # Remove markdown code fences if present
+    # Remove markdown code fences
     cleaned = re.sub(r"^```json\s*", "", cleaned, flags=re.IGNORECASE)
     cleaned = re.sub(r"^```\s*", "", cleaned)
     cleaned = re.sub(r"\s*```$", "", cleaned)
 
-    # Extract first JSON object from text
+    # Remove wrapping quotes if whole response is a quoted JSON string
+    if cleaned.startswith('"') and cleaned.endswith('"'):
+        try:
+            cleaned = json.loads(cleaned)
+        except Exception:
+            pass
+
+    # Extract first JSON object
     start = cleaned.find("{")
     end = cleaned.rfind("}")
 
@@ -104,7 +111,15 @@ def clean_json_response(raw_text):
 
 def parse_ai_json(raw_text):
     cleaned = clean_json_response(raw_text)
-    return json.loads(cleaned)
+
+    # First parse attempt
+    parsed = json.loads(cleaned)
+
+    # If model returned JSON as string, parse again
+    if isinstance(parsed, str):
+        parsed = json.loads(parsed)
+
+    return parsed
 
 
 def validate_resume_with_ai(text):
@@ -287,12 +302,13 @@ Resume Text:
                 "filename": file.filename,
                 "analysis": parsed_output
             }
-        except json.JSONDecodeError:
+        except Exception as e:
             return {
                 "success": False,
                 "filename": file.filename,
                 "message": "The analysis was generated, but the response format was invalid. Please try again.",
-                "raw_response": raw_output
+                "raw_response": raw_output,
+                "parse_error": str(e)
             }
 
     except Exception as e:
