@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import io
 import json
 import os
+import re
 
 load_dotenv()
 
@@ -80,6 +81,32 @@ def keyword_resume_check(text):
     return matched_keywords
 
 
+def clean_json_response(raw_text):
+    if not raw_text:
+        return ""
+
+    cleaned = raw_text.strip()
+
+    # Remove markdown code fences if present
+    cleaned = re.sub(r"^```json\s*", "", cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"^```\s*", "", cleaned)
+    cleaned = re.sub(r"\s*```$", "", cleaned)
+
+    # Extract first JSON object from text
+    start = cleaned.find("{")
+    end = cleaned.rfind("}")
+
+    if start != -1 and end != -1 and end > start:
+        cleaned = cleaned[start:end + 1]
+
+    return cleaned.strip()
+
+
+def parse_ai_json(raw_text):
+    cleaned = clean_json_response(raw_text)
+    return json.loads(cleaned)
+
+
 def validate_resume_with_ai(text):
     validation_prompt = f"""
 You are a document classifier.
@@ -122,7 +149,7 @@ Document text:
     )
 
     raw_output = response.choices[0].message.content
-    return json.loads(raw_output)
+    return parse_ai_json(raw_output)
 
 
 @app.post("/extract-text")
@@ -254,7 +281,7 @@ Resume Text:
         raw_output = response.choices[0].message.content
 
         try:
-            parsed_output = json.loads(raw_output)
+            parsed_output = parse_ai_json(raw_output)
             return {
                 "success": True,
                 "filename": file.filename,
