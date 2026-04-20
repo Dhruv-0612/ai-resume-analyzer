@@ -1,20 +1,29 @@
-# 🚀 AI Resume Analyzer
-
 A full-stack AI-powered web application that analyzes resumes and provides ATS-style scoring, strengths, weaknesses, and actionable improvement suggestions.
 
-Built to simulate real-world resume evaluation using modern AI models and a clean, premium UI.
+Built from scratch using modern AI APIs, clean architecture, and a premium UI to simulate real-world resume evaluation systems.
+
+---
+
+## 🌐 Live Demo
+
+🔗 Frontend:  
+https://ai-resume-analyzer-eight-sigma.vercel.app
+
+🔗 Backend API:  
+https://ai-resume-analyzer-pbh7.onrender.com
 
 ---
 
 ## ✨ Features
 
 - 📄 Upload resume in PDF format
-- 🤖 AI-based resume analysis
+- 🤖 AI-based resume analysis using LLaMA 3
 - 📊 ATS-style score (0–100)
 - 💪 Strength identification
 - ⚠️ Weakness detection
 - 💡 Actionable suggestions for improvement
 - 🧠 Smart resume validation (detects non-resume PDFs)
+- ⚡ Real-time analysis with loading state
 - 🎨 Modern dark UI with premium design
 
 ---
