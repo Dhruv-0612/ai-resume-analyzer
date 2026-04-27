@@ -77,7 +77,7 @@ https://ai-resume-analyzer-pbh7.onrender.com
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/ai-resume-analyzer.git
+git clone https://github.com/Dhruv-0612/ai-resume-analyzer.git
 cd ai-resume-analyzer
 ```
 
@@ -170,3 +170,5 @@ http://127.0.0.1:8000
 ## 👨‍💻 Author
 
 **Dhruv Hiteshbhai Mistry**
+📍 India  
+🔗 https://github.com/Dhruv-0612
