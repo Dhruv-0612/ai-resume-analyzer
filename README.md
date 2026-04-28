@@ -49,6 +49,21 @@ https://ai-resume-analyzer-pbh7.onrender.com
 
 ---
 
+## ⚡ Deployment Notes
+
+- Frontend is deployed on Vercel
+- Backend is deployed on Render (free tier)
+- Backend may take a few seconds to respond after inactivity due to cold starts
+- Resume analysis is powered by Groq API (LLaMA 3 model)
+
+---
+
+## 🧩 Architecture
+
+Frontend (Vercel) → Backend (Render) → Groq (LLaMA 3) → Response → UI
+
+---
+
 ## 📸 Screenshots
 
 ### 🏠 Home Page
@@ -141,10 +156,6 @@ http://127.0.0.1:8000
 ```
 
 ---
-
-## 🧠 How It Works
-
-1. User uploads a PDF resume
 
 ## 🧠 How It Works
 
