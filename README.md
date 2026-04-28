@@ -14,6 +14,9 @@ https://ai-resume-analyzer-eight-sigma.vercel.app
 🔗 Backend API:  
 https://ai-resume-analyzer-pbh7.onrender.com
 
+> ⚠️ Note: The backend is hosted on Render (free tier), which may take 30–60 seconds to wake up after inactivity.  
+> If the request fails initially, please wait and try again.
+
 ---
 
 ## ✨ Features
@@ -128,7 +131,7 @@ GROQ_API_KEY=your_api_key_here
 ### 5. Run Backend Server
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 Backend will run at:
@@ -142,11 +145,15 @@ http://127.0.0.1:8000
 ## 🧠 How It Works
 
 1. User uploads a PDF resume
+
+## 🧠 How It Works
+
+1. User uploads a PDF resume
 2. Backend extracts text using PyPDF2
 3. AI validates whether the file is a resume
-4. Resume is analyzed using LLaMA 3 model
-5. JSON response is generated
-6. Frontend displays results
+4. Resume is analyzed using LLaMA 3 via Groq API
+5. Structured JSON response is generated
+6. Frontend renders ATS score, strengths, weaknesses, and suggestions
 
 ---
 
@@ -171,4 +178,4 @@ http://127.0.0.1:8000
 
 **Dhruv Hiteshbhai Mistry**
 📍 India  
-🔗 https://github.com/Dhruv-0612
+🔗 GitHub: https://github.com/Dhruv-0612
