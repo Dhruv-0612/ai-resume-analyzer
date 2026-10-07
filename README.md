@@ -187,6 +187,6 @@ http://127.0.0.1:8000
 
 ## 👨‍💻 Author
 
-**Dhruv Hiteshbhai Mistry**
+**DHRUVKUMAR MISTRI**
 📍 India  
 🔗 GitHub: https://github.com/Dhruv-0612
