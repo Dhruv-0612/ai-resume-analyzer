@@ -146,7 +146,7 @@ GROQ_API_KEY=your_api_key_here
 ### 5. Run Backend Server
 
 ```bash
-uvicorn app.main:app --reload
+uvicorn main:app --reload
 ```
 
 Backend will run at:
